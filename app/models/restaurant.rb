@@ -1,13 +1,7 @@
 class Restaurant < ApplicationRecord
-    def change
-      create_table :restaurants do |t|
-        t.string :name
-        t.string :address
-        t.text :description
-        t.integer :stars
-
-        t.timestamps
-      end
-    end
-  end
+  validates :name, presence: true
+  validates :address, presence: true
+  validates :phone_number, presence: true
+  validates :category, inclusion: {in ["japanese", "italian",
+  has_many :reviews
 end
